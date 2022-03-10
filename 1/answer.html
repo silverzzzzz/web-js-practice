@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change text</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="./../common.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/css/uikit.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit-icons.min.js"></script>
+  </head>
+  <body>
+    <header><h1>JavaScript課題</h1></header>
+    <main id="main">
+      <!--START-->
+      <div id="result">
+        <div>こんにちは</div>
+      </div>
+      <div class="uk-flex uk-margin">
+        <div class="uk-width-expand">
+          <input type="text" name="username" id="username" class="uk-input" />
+        </div>
+        <button
+          id="button"
+          class="uk-button uk-button-primary"
+          onclick="hello_name()"
+        >
+          送信
+        </button>
+      </div>
+      <!--END-->
+    </main>
+    <footer>
+      <div>©2020 Salor</div>
+    </footer>
+    <script>
+      /*ここから*/
+      function hello_name() {
+        let uname = document.getElementById("username").value;
+        if (!uname) {
+          uname = "名無し";
+        }
+        document.querySelector("#result > div").textContent =
+          "こんにちは、" + uname + "さん";
+      }
+    </script>
+  </body>
+</html>
