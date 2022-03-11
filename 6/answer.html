@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Humberger Menu</title>
+    <title>loading</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
     <link rel="stylesheet" href="./../common.css" />
     <link
@@ -19,16 +19,14 @@
     <header><h1>JavaScript課題</h1></header>
     <main id="main">
       <!--START-->
-      <div>
-        <div
-          class="uk-flex uk-flex-around uk-background-secondary uk-light uk-flex-middle"
-        >
-          <h2 class="uk-margin-remove-bottom">メニューバー</h2>
-          <div>
-            メニュー
-            <!--ここにハンバーガーメニューを記載-->
-          </div>
+      <div id="loading">
+        <div id="animation">
+          <p>Now Loading...</p>
         </div>
+        <!-- #animation -->
+      </div>
+      <div id="result">
+        <img src="./bluesky.jpg" />
       </div>
       <!--END-->
     </main>
@@ -37,7 +35,42 @@
     </footer>
     <script>
       /*ここから*/
+      $(window).on("load", function () {
+        $("#loading").delay(900).fadeOut(800);
+      });
+
+      $(function () {
+        setTimeout("stopload()", 10000);
+      });
+
+      function stopload() {
+        $("#loading").delay(900).fadeOut(800);
+      }
     </script>
-    <style></style>
+    <style>
+      #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000;
+        z-index: 9000;
+      }
+
+      #animation {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+      }
+
+      #animation img {
+        width: 50px;
+        height: 50px;
+      }
+    </style>
   </body>
 </html>

@@ -20,11 +20,15 @@
       <!--START-->
       <div class="wrapper">
         <div id="top-btn">
-          <button class="uk-button uk-button-secondary">TOPへ戻る</button>
+          <button class="uk-button uk-button-secondary" onclick="scroll_top()">
+            TOPへ戻る
+          </button>
         </div>
         <div class="uk-flex uk-flex-column">
           <div class="uk-text-center">
-            <button class="uk-button uk-button-danger">夕焼けへ</button>
+            <button class="uk-button uk-button-danger" onclick="scrollsunset()">
+              夕焼けへ
+            </button>
           </div>
           <div><img src="./bluesky.jpg" /></div>
           <div><img src="./bluesky.jpg" /></div>
@@ -32,7 +36,7 @@
           <div><img src="./bluesky.jpg" /></div>
           <div><img src="./bluesky.jpg" /></div>
           <div><img src="./bluesky.jpg" /></div>
-          <div><img src="./sunset.jpg" /></div>
+          <div id="sunset"><img src="./sunset.jpg" /></div>
           <div><img src="./bluesky.jpg" /></div>
         </div>
       </div>
@@ -43,6 +47,14 @@
     </footer>
     <script>
       /*ここから*/
+      function scrollsunset() {
+        let sunset = document.getElementById("sunset");
+        let sunset_p = sunset.getBoundingClientRect();
+        window.scrollTo(0, sunset_p.top);
+      }
+      function scroll_top() {
+        window.scrollTo(0, 0);
+      }
     </script>
     <style>
       #top-btn {

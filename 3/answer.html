@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Change text</title>
+    <title>Form</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
     <link rel="stylesheet" href="./../common.css" />
     <link
@@ -18,9 +18,20 @@
     <header><h1>JavaScript課題</h1></header>
     <main id="main">
       <!--START-->
-      <div id="result">
-        <form></form>
-      </div>
+      <form class="uk-form-horizontal uk-margin-large">
+        <div class="uk-margin">
+          <label class="uk-form-label" for="cardnumber">カード番号</label>
+          <div class="uk-form-controls">
+            <input
+              class="uk-input"
+              id="cardnumber"
+              name="cardnumber"
+              type="text"
+            />
+          </div>
+        </div>
+      </form>
+      <p id="card_result"></p>
       <!--END-->
     </main>
     <footer>
